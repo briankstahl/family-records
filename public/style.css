@@ -1,131 +1,129 @@
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap');
 
-/* Base styles */
 body {
     font-family: 'Oxanium', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: #121212; /* dark mode base background */
-    color: #f0f0f0; /* default text color */
     margin: 0;
     padding: 0;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
     transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
 }
 
+body.light-mode {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Header for rules & entry pages */
 header {
-    background-color: #1e1e1e;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 header img {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 10px;
+    width: 150px;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 700;
-    margin: 10px 0;
+/* Centered landing page content */
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* vertical centering */
+    text-align: center;
+    padding: 0 20px;
 }
 
-h1 {
-    font-size: 2.5em;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-h3 {
-    font-size: 1.5em;
-}
-
-h4 {
-    font-size: 1.2em;
-}
-
-p {
-    margin: 10px 0;
-}
-
-button {
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px 0;
-    border-radius: 8px;
+/* Landing page logo size */
+.landing-logo {
+    width: 250px;
     cursor: pointer;
-    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-family: 'Oxanium', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #f2f2f2;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #3700b3;
+    background-color: #666;
 }
 
-/* Forms */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 12px;
+/* Collapsible sections */
+details {
+    margin-bottom: 15px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
-    border: none;
-    border-radius: 6px;
-    font-family: 'Oxanium', sans-serif;
-    font-size: 1em;
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
-/* Responsive font size for mobile */
-@media (max-width: 600px) {
+details p {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+/* Mobile enhancements */
+@media (max-width: 768px) {
     body {
-        font-size: 20px;
+        font-size: 18px;
     }
-    h1 {
-        font-size: 3em;
+
+    header {
+        flex-direction: column;
+        align-items: center;
     }
-    h2 {
-        font-size: 2.5em;
+
+    header img {
+        width: 120px;
+        margin-bottom: 10px;
     }
-    h3 {
-        font-size: 2em;
+
+    .landing-logo {
+        width: 180px;
     }
-    h4 {
-        font-size: 1.5em;
-    }
-    p {
-        line-height: 1.8;
-    }
+
     button {
-        font-size: 1.2em;
         padding: 12px 24px;
+        font-size: 1em;
+    }
+
+    details summary {
+        font-size: 1em;
+    }
+
+    details p {
+        font-size: 0.95em;
+    }
+
+    .centered {
+        height: auto;
+        padding: 40px 20px;
     }
 }
 
-/* Dark/Light mode toggle */
-body.light-mode {
-    background-color: #f0f0f0;
-    color: #121212;
+/* Optional: make links stand out */
+a {
+    color: #4da6ff;
+    text-decoration: none;
 }
 
-body.light-mode header {
-    background-color: #e0e0e0;
-}
-
-body.light-mode form {
-    background-color: #ffffff;
-}
-
-body.light-mode button {
-    background-color: #6200ea;
-    color: white;
+a:hover {
+    text-decoration: underline;
 }

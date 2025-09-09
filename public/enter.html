@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a Record</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Family Logo">
+        <h1>Submit a Stahl Record</h1>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </header>
+    <main>
+        <form action="/submit" method="POST">
+            <label for="title">Record Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="name">Record Holder Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Date of Achievement:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="description">Description of the Record:</label>
+            <textarea id="description" name="description" rows="5" required></textarea>
+
+            <label for="evidence">Evidence Link:</label>
+            <input type="url" id="evidence" name="evidence">
+
+            <button type="submit">Submit Record</button>
+        </form>
+    </main>
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
+    </script>
+</body>
+</html>
