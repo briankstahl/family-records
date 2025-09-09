@@ -1,131 +1,131 @@
-/* ===== General Styles ===== */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap');
+
+/* Base styles */
 body {
-  font-family: 'Oxanium', cursive;
-  background: #f4f4f4;
-  color: #222;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #121212; /* dark mode base background */
+    color: #f0f0f0; /* default text color */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 20px;
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
 }
 
-/* ===== Header / Logo ===== */
-.header {
-  text-align: center;
-  margin-bottom: 30px;
+header img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
-.header img {
-  width: 150px;
-  max-width: 50%;
-  border-radius: 15px;
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin: 10px 0;
 }
 
-.header h1 {
-  margin-top: 10px;
-  font-size: 2rem;
+h1 {
+    font-size: 2.5em;
 }
 
-/* ===== Form Styles ===== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+h2 {
+    font-size: 2em;
 }
 
-input, textarea, button {
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
+h3 {
+    font-size: 1.5em;
 }
 
-textarea {
-  resize: vertical;
-  min-height: 80px;
+h4 {
+    font-size: 1.2em;
+}
+
+p {
+    margin: 10px 0;
 }
 
 button {
-  background: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-  background: #0056b3;
+    background-color: #3700b3;
 }
 
-/* ===== Records Styles ===== */
-.record {
-  background: white;
-  padding: 15px 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+/* Forms */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
 }
 
-.record img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-/* ===== Toggle Dark Mode ===== */
-.toggle-mode {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #222;
-  color: white;
-  cursor: pointer;
-}
-
-body.dark {
-  background: #121212;
-  color: #f4f4f4;
-}
-
-body.dark input,
-body.dark textarea {
-  background: #1e1e1e;
-  color: #f4f4f4;
-  border: 1px solid #555;
-}
-
-body.dark button {
-  background: #bb86fc;
-  color: #121212;
-}
-
-body.dark .record {
-  background: #1e1e1e;
-  box-shadow: 0 4px 8px rgba(255,255,255,0.05);
-}
-
-body.dark .toggle-mode {
-  background: #f4f4f4;
-  color: #121212;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .container {
+input, textarea {
+    width: 100%;
     padding: 10px;
-  }
-  .header h1 {
-    font-size: 1.5rem;
-  }
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1em;
+}
+
+/* Responsive font size for mobile */
+@media (max-width: 600px) {
+    body {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    h4 {
+        font-size: 1.5em;
+    }
+    p {
+        line-height: 1.8;
+    }
+    button {
+        font-size: 1.2em;
+        padding: 12px 24px;
+    }
+}
+
+/* Dark/Light mode toggle */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #121212;
+}
+
+body.light-mode header {
+    background-color: #e0e0e0;
+}
+
+body.light-mode form {
+    background-color: #ffffff;
+}
+
+body.light-mode button {
+    background-color: #6200ea;
+    color: white;
 }
