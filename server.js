@@ -1,14 +1,13 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Routes
 
 // Landing page
 app.get('/', (req, res) => {
@@ -20,16 +19,24 @@ app.get('/rules', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'rules.html'));
 });
 
-// Form submission page
+// Enter Records page
 app.get('/enter', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'enter.html'));
 });
 
-// Handle form submission
+// Home page (alias for Enter page)
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'enter.html'));
+});
+
+// Handle form submissions
 app.post('/submit', (req, res) => {
     console.log('Form submission received:', req.body);
-    // Here you could save the data to a file or database
-    res.send('<h2>Thank you! Your record has been submitted.</h2><a href="/">Back to Home</a>');
+    res.send(`
+        <h1>Record Submitted!</h1>
+        <p>Thank you, ${req.body.name}, for submitting your record.</p>
+        <a href="/enter">Submit Another</a>
+    `);
 });
 
 // Start server

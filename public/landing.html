@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Stahl Book of World Records</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome - SBWR</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <main class="centered">
-        <img src="logo.png" alt="Family Logo" class="landing-logo" onclick="location.href='/rules'">
-        <h1>Welcome to the Stahl Book of World Records</h1>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
-        <p>Click the logo to enter.</p>
-    </main>
-    <script>
-        const toggle = document.getElementById('darkModeToggle');
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-        });
-    </script>
+<body class="landing">
+  <div class="overlay">
+    <h1>Welcome to the Stahl Book of World Records</h1>
+    <div class="button-group">
+      <a href="/enter" class="enter-button">Enter a Record</a>
+      <a href="/rules" class="rules-button">View Rules</a>
+    </div>
+  </div>
 </body>
 </html>
