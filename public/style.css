@@ -33,17 +33,17 @@ body.landing {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 24px;
-    background-color: #2196F3; /* blue */
+    background-color: #0056b3; /* CHANGED */
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 8px;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 .enter-button:hover,
 .rules-button:hover {
-    background-color: #0056b3;
+    background-color: #4CAF50; /* CHANGED */
 }
 
 .button-group {
@@ -101,31 +101,29 @@ body.enter {
 }
 
 .form-container button {
-    background: #4CAF50;
+    background-color: #0056b3; /* UPDATED to background-color for consistency */
     color: white;
     cursor: pointer;
     margin-top: 15px;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
-
 .form-container button:hover {
-    background: #45a049;
+    background-color: #4CAF50; /* UPDATED to background-color for consistency */
 }
 
 
 /* --- RULES PAGE --- */
 body.rules {
     background: url('logo.png') no-repeat center center fixed;
-    background-size: cover; /* Use 'cover' for better scaling */
+    background-size: cover;
     align-items: flex-start;
     min-height: 100vh;
     padding: 20px;
-    color: #222; /* Default text color for content inside containers */
+    color: #222;
 }
 
-/* This targets the .container div ONLY on the rules page */
 body.rules .container {
-    background: rgba(255, 255, 255, 0.9); /* Lighter background for readability */
+    background: rgba(0, 0, 0, 0.75);
     padding: 30px;
     border-radius: 12px;
     max-width: 900px;
@@ -136,8 +134,8 @@ body.rules .container {
 
 body.rules h1,
 body.rules h2 {
-    color: white; /* This color is for the titles outside the container */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Adds depth against the background */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     text-align: center;
 }
 
@@ -152,7 +150,7 @@ body.rules h2 {
 
 /* Rules Page - Collapsible Sections */
 .collapsible {
-    background-color: #007bff;
+    background-color: #0056b3; /* CHANGED */
     color: white;
     cursor: pointer;
     padding: 10px 20px;
@@ -166,11 +164,11 @@ body.rules h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 .collapsible:hover {
-    background-color: #0056b3;
+    background-color: #4CAF50; /* CHANGED */
 }
 
 .collapsible .arrow {
@@ -179,6 +177,27 @@ body.rules h2 {
 
 .collapsible.active .arrow {
     transform: rotate(90deg);
+}
+
+/* --- Style for the main navigation button --- */
+.nav-button {
+    background-color: #0056b3; /* CHANGED */
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    /* --- Layout styling --- */
+    display: block;         /* Allows for margin auto centering */
+    width: fit-content;     /* Makes button width fit the text */
+    margin: 20px auto;      /* Adds space and centers the button */
+}
+
+.nav-button:hover {
+    background-color: #4CAF50; /* CHANGED */
 }
 
 .content {
@@ -191,7 +210,7 @@ body.rules h2 {
     border-left: 4px solid #007bff;
 }
 
-/* Rules Page - Button */
+/* Rules Page - Button (obsolete class but kept for safety) */
 body.rules .enter-btn {
     display: block;
     width: 90%; 

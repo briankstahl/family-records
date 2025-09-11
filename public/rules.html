@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 <body class="rules">
   <div class="container">
@@ -67,7 +66,7 @@
       </ul>
     </div>
 
-    <a href="/home" class="enter-btn">Enter the SBWR</a>
+    <button id="navigateToHome" class="nav-button">Enter the SBWR</button>
   </div>
 
   <script>
@@ -75,18 +74,26 @@
     const coll = document.getElementsByClassName("collapsible");
     for (let i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
-        const arrow = this.querySelector(".arrow");
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-          arrow.textContent = "▶";
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          arrow.textContent = "▼";
+        // Only toggle if it's not the navigation button
+        if (this.id !== "navigateToHome") {
+          this.classList.toggle("active");
+          const content = this.nextElementSibling;
+          const arrow = this.querySelector(".arrow");
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            if (arrow) arrow.textContent = "▶";
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            if (arrow) arrow.textContent = "▼";
+          }
         }
       });
     }
+
+    // Handles navigation for the "Enter the SBWR" button
+    document.getElementById("navigateToHome").addEventListener("click", function() {
+        window.location.href = "/home";
+    });
   </script>
 </body>
 </html>
