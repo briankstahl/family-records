@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap');
 
+/* --- GLOBAL STYLES --- */
 body {
     font-family: 'Oxanium', sans-serif;
     margin: 0;
@@ -8,7 +9,7 @@ body {
     color: #f2f2f2;
 }
 
-/* Landing page background */
+/* --- LANDING PAGE --- */
 body.landing {
     background: url('logo.png') no-repeat center center fixed;
     background-size: 100% 100%; /* stretch to fit screen */
@@ -27,30 +28,7 @@ body.landing {
     max-width: 600px;
 }
 
-.enter-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #2196F3; /* blue */
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    transition: background 0.3s;
-}
-.enter-button:hover {
-    background-color: #45a049;
-}
-
-/* Button group on landing */
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* Rules button (styled similar to enter) */
+.enter-button,
 .rules-button {
     display: inline-block;
     margin-top: 20px;
@@ -62,13 +40,20 @@ body.landing {
     border-radius: 8px;
     transition: background 0.3s;
 }
+
+.enter-button:hover,
 .rules-button:hover {
-    background-color: #
-45a049;
+    background-color: #0056b3;
 }
 
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-/* Enter page */
+/* --- ENTER/SUBMISSION PAGE --- */
 body.enter {
     background: url('logo.png') no-repeat center center fixed;
     background-size: 100% 100%;
@@ -122,43 +107,135 @@ body.enter {
     margin-top: 15px;
     transition: background 0.3s;
 }
+
 .form-container button:hover {
     background: #45a049;
 }
 
-/* Rules page */
+
+/* --- RULES PAGE --- */
 body.rules {
     background: url('logo.png') no-repeat center center fixed;
-    background-size: 100% 100%;
-    display: flex;
-    justify-content: center;
+    background-size: cover; /* Use 'cover' for better scaling */
     align-items: flex-start;
     min-height: 100vh;
     padding: 20px;
+    color: #222; /* Default text color for content inside containers */
 }
 
-.rules-container {
-    background: rgba(0, 0, 0, 0.75);
+/* This targets the .container div ONLY on the rules page */
+body.rules .container {
+    background: rgba(255, 255, 255, 0.9); /* Lighter background for readability */
     padding: 30px;
     border-radius: 12px;
     max-width: 900px;
     width: 95%;
+    margin: auto;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    line-height: 1.7;
 }
 
-.rules-container h1,
-.rules-container h2 {
+body.rules h1,
+body.rules h2 {
+    color: white; /* This color is for the titles outside the container */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Adds depth against the background */
     text-align: center;
+}
+
+body.rules h1 {
+    font-size: 2.2rem;
+}
+
+body.rules h2 {
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.rules-container details {
-    margin: 15px 0;
+/* Rules Page - Collapsible Sections */
+.collapsible {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
 }
 
-.rules-container summary {
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
+.collapsible:hover {
+    background-color: #0056b3;
+}
+
+.collapsible .arrow {
+    transition: transform 0.3s;
+}
+
+.collapsible.active .arrow {
+    transform: rotate(90deg);
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    border-left: 4px solid #007bff;
+}
+
+/* Rules Page - Button */
+body.rules .enter-btn {
+    display: block;
+    width: 90%; 
+    max-width: 220px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+
+/* --- MEDIA QUERIES FOR RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+
+    /* Mobile styles for Rules Page */
+    body.rules {
+        padding: 10px;
+    }
+
+    body.rules .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    body.rules h1 {
+        font-size: 1.8rem;
+    }
+
+    body.rules h2 {
+        font-size: 1.2rem;
+    }
+    
+    .content p, .content li {
+        text-indent: 0; /* Remove text indent on mobile */
+    }
+
+    /* Mobile styles for Landing Page */
+    .overlay {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
 }
